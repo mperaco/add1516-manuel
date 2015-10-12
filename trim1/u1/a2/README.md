@@ -40,3 +40,17 @@ También instalamos el openssh-server, que en mi caso ya venía en el sistema:
 Y por último, creamos la imagen del sistema operativo a partir del sistema real haciendo `ltsp-build-client`
 
 ## Máquina cliente para LTSP
+
+Creamos una máquina sin disco duro y sin unidad de DVD.
+
+![imagen8] (./images/08.png)
+
+Y configuramos la máquina de tal modo que inicie el sistema a través de la red:
+
+![imagen9] (./images/09.png)
+
+Parece que funciona el DHCP pero nos da un error:
+
+![imagen10] (./images/10.png)
+
+## Solución del error
