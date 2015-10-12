@@ -37,6 +37,6 @@ También instalamos el openssh-server, que en mi caso ya venía en el sistema:
 
 ![imagen7] (./images/07.png)
 
-Y por último, creamos la imagen del sistema operativo a partir del sistema real haciendo > ltsp-build-client
+Y por último, creamos la imagen del sistema operativo a partir del sistema real haciendo `ltsp-build-client`
 
 ## Máquina cliente para LTSP
