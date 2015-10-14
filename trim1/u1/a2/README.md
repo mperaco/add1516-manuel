@@ -54,3 +54,23 @@ Parece que funciona el DHCP pero nos da un error:
 ![imagen10] (./images/10.png)
 
 ## Solución del error
+
+Después de hacer varios cambios, decidimos hacer la imagen del sistema de 32 bits para intentar solucionar el fallo. Una vez creada la imagen realizamos algunos cambios:
+
+En el fichero `/etc/default/isc-dhcp-server` añadimos la interfaz `eth1`:
+
+![imagen11] (./images/11.png)
+
+Y en el fichero `/etc/default/tftpd-hpa` añadimos la dirección IP:
+
+![imagen12] (./images/12.png)
+
+Para finalizar, ejecutamos el servicio dhcp con el siguiente comando:
+
+![imagen13] (./images/13.png)
+
+Y finalmente conseguimos entrar como se muestra en el video subido a youtube.
+
+Aquí agrego la última captura que muestra los siguintes comandos cuando el cliente está logeado:
+
+![imagen14] (./images/14.png)
