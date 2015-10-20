@@ -1,0 +1,7 @@
+pepe:gutierrez:guti@gmail.com:1/05/68:add
+jorge:perez:perez@yahoo.es:5/09/86:delete
+maria:gonzalez::26/04/89:add
+carlota:hernandez:hernan@hotmail.com:23/06/96:add
+carlos:garcia:garci@hotmail.es:15/12/99:delete
+laura:acosta:lau@gmail.com:30/10/84:add
+paula:castro::29/11/59:delete
