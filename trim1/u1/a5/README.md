@@ -149,9 +149,32 @@ Pero desde el cliente2 si que lo pide:
 
 ## 5. Uso de SSH como túnel para X
 
+En este punto, instalamos en el servidor una aplicación de entorno gráfico que no esté en el cliente, en mi caso he utilizado geany. 
 
+![imagen32](./images/32.png)
+
+Modificamos el servidor para permitir la ejecución de aplicaciones gráficas desde los clientes:
+
+![imagen33](./images/33.png)
+
+Y comprobamos el funcionamiento con el comando `ssh -X perez1@ssh-server`:
+
+![imagen34](./images/34.png)
 
 ## 6. Aplicaciones Windows nativas
+
+En este punto, vamos a poder instalar aplicaciones de Windows mediante el emulador Wine. Lo primero que hacemos es instalarlo:
+
+![imagen35](./images/35.png)
+
+Y ahora instalamos una aplicación, en mi caso he utilizado el notepad:
+
+![imagen36](./images/36.png)
+![imagen38](./images/38.png)
+
+Y por último comprobamos el funcionamiento:
+
+![imagen39](./images/39.png)
 
 ## 7. Restricciones de uso
 
