@@ -71,13 +71,50 @@ Por últimos hacemos ping entre los dos equipos para comprobar que todo está bi
 
 ## 2. Instalación del servicio SSH
 
+Vamos a instalar el servicio SSH en la máquina server, en mi caso, desde la terminal.
+
+![imagen17](./images/17.png)
+
+Al ejecutar el comando, nos damos cuenta de que ya está instalado el paquete.
+
 ### Comprobación
+
+Ahora desde el **ssh-server**, verificamos que el servicio está en ejecución, y sino lo iniciamos nosotros con el comando `systemctl status/start/stop/restart sshd`:
+
+![imagen18](./images/18.png)
 
 ### Primera conexión SSH desde el cliente
 
+Lo primero que hacemos es comprobar el cortafuegos y ponemos como servicio autorizado el ssh:
+
+![imagen20.0](./images/20.0.png)
+
+Y ahora comprobamos el acceso mediante ssh desde los clientes, comprobamos que se produce el intercambio de claves:
+
+![imagen20](./images/20.png)
+![imagen21](./images/21.png)
+
+Comprobamos el contenido del fichero /.ssh/known_hosts en el equipo ssh-client1 (la clave que aparece es la clave de identificación de la máquina server):
+
+![imagen22](./images/22.png)
+
 ### ¿Y si cambiamos las claves del servidor?
 
+En este punto, vamos a modificar el fichero de configuración SSH (/etc/ssh/sshd_config) y descomentamos la línea HostKey /etc/ssh/ssh_host_rsa_key:
+
+![imagen19](./images/19.png)
+
+Generamos nuevas claves en el server y reiniciamos el servicio SSH. A continuación, comprobamos que sucede al volver a conectarnos desde el cliente:
+
+![imagen23](./images/23.png)
+
+Ahora borramos la clave del cliente y nos conectamos de nuevo para que se produzca el intercambio de claves otra vez:
+
+![imagen24](./images/24.png)
+
 ## 3. Personalización del prompt Bash
+
+
 
 ## 4. Autenticación mediante claves públicas
 
