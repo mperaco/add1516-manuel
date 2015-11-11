@@ -178,10 +178,36 @@ Y por último comprobamos el funcionamiento:
 
 ## 7. Restricciones de uso
 
+En este último punto, vamos a modificar los usuarios del servidor SSH para añadir algunas restricciones de uso del servicio.
+
 ### Sin restricción (tipo 1)
+
+El usuario 1 podrá conectarse sin restricciones, en principio no es necesario tocar nada.
 
 ### Restricción total (tipo 2)
 
+Vamos a modificar SSH de modo que al usar el usuario por ssh desde los clientes tendremos permiso denegado.
+
+Modificamos el fichero de configuración del servidor SSH (/etc/ssh/sshd_config) para restringir el acceso a determinados usuarios y comprobamos:
+
+![imagen40](./images/40.png)
+
 ### Restricción en las máquinas (tipo 3)
 
+NO SE PUDO REALIZAR ESTA PARTE.
+
 ### Restricción sobre aplicaciones (tipo 4)
+
+En este último apartado, vamos a crear una restricción de permisos sobre un aplicación.
+
+Usaré el usuario perez4, crearemos el grupo remoteapps y incluimos a dicho usuario.
+
+![imagen40](./images/41.png)
+
+Localizamos el programa geany en este caso y ponemos como grupo propietario remoteapps y permisos 750 para impedir que usuarios que no pertenezcan al grupo puedan ejecutar el programa.
+
+![imagen40](./images/42.png)
+
+Por último, comprobamos el funcionamiento:
+
+![imagen40](./images/43.png)
