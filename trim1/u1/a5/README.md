@@ -114,11 +114,42 @@ Ahora borramos la clave del cliente y nos conectamos de nuevo para que se produz
 
 ## 3. Personalización del prompt Bash
 
+En este punto vamos a personalizar el aspecto de la consola para un usuario, para ello, modificamos el fichero .bashrc del usuario:
 
+![imagen25](./images/25.png)
+
+Y además creamos el fichero .alias con el siguiente contenido:
+
+![imagen26](./images/26.png)
+
+Hacemos la comprobación:
+
+![imagen27](./images/27.png)
 
 ## 4. Autenticación mediante claves públicas
 
+En este apartado vamos a configurar SSH para poder acceder desde el ssh-client1 usando el usuario 4 sin poner el password pero usando claves pública/privada. 
+Vamos a configurar la autenticación mediante clave pública para acceder con nuestro usuario personal desde el equipo cliente al servidor con el usuario 1er-apellido-alumno4.
+
+En primer lugar, iniciamos sesión con nuestro usuario y ejecutamos `ssh-keygen -t rsa` para generar un par de claves para el usuario:
+
+![imagen28](./images/28.png)
+
+Ahora vamos a copiar la clave pública (id_rsa.pub) del usuario de la máquina cliente al fichero `authorized_keys` del usuario perez4 en el servidor, para ello, yo he usado el comando `ssh-copy-id perez4@ssh-server`
+
+![imagen29](./images/29.png)
+
+Y accedemos sin escribir el password:
+
+![imagen30](./images/30.png)
+
+Pero desde el cliente2 si que lo pide:
+
+![imagen31](./images/31.png)
+
 ## 5. Uso de SSH como túnel para X
+
+
 
 ## 6. Aplicaciones Windows nativas
 
