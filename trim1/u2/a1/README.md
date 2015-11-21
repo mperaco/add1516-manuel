@@ -88,10 +88,50 @@ Comprobamos el estado:
 
 ## Cliente GNU/Linux GUI
 
+Desde el entorno gráfico, podemos acceder a los recursos compartidos SMB/CIFS. Accedemos escribiendo `smb://172.18.7.53`:
 
+![imagen18](./images/18.png)
+
+Probamos a entrar en la carpeta tatooine y creamos una carpeta:
+
+![imagen19](./images/19.png)
+
+Y ahora, comprobamos que la carpeta public es de sólo lectura:
+
+![imagen20](./images/20.png)
+
+Y comprobamos el estado del servidor:
+
+![imagen21](./images/21.png)
 
 ## Cliente GNU/Linux comandos
 
+Ahora, mediante comandos, vamos a montar un recurso compartido en una carpeta local del cliente:
+
+![imagen22](./images/22.png)
+
+Después de montar, comprobamos:
+
+![imagen23](./images/23.png)
+
+Comparamos el servidor y el cliente:
+
+![imagen24](./images/24.png)
+
+Y comprobamos el estado:
+
+![imagen25](./images/25.png)
+
 ## Montaje automático
 
+En el apartado anterior, hemos realizado el montaje de forma manual, pero para configurar las acciones de montaje de manera automática, configuraremos el fichero `/etc/stab`; de esta manera, cada vez que iniciemos el equipo se montará de manera automática.
+
+![imagen26](./images/26.png)
+
 # Preguntas para resolver
+
+* ¿Las claves de los usuarios en GNU/Linux deben ser las mismas que las que usa Samba? No, las claves pueden ser diferentes.
+* ¿Puedo definir un usuario en Samba llamado sith3, y que no exista como usuario del sistema? No, para crear un usuario de samba debemos utilizar el comando smbpasswd, pero antes debemos haber creado el usuario en el sistema. 
+* ¿Cómo podemos hacer que los usuarios sith1 y sith2 no puedan acceder al sistema pero sí al samba? (Consultar `/etc/passwd`) Posiblemente con el uso de las listas de control de acceso (ACL).
+* Añadir el recurso `[homes]` al fichero `smb.conf` según los apuntes. ¿Qué efecto tiene? Nos permitirá compartir las carpetas home de cada usuario, para que cada usuario pueda acceder a su carpeta home por la red.
+
