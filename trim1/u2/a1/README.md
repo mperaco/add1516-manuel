@@ -70,11 +70,25 @@ Y comprobamos con los siguientes comandos:
 
 ## Cliente Windows GUI
 
+En este apartado de la práctica, trataremos de acceder a los recursos compartidos en el servidor Samba desde un cliente Windows. Comprobaremos todos los accesos posibles como si fuéramos un `sith`, un `jedi` o un invitado.
+
+![imagen15](./images/15.png)
+
 ## Cliente Windows comandos
+
+En el cliente Windows, para consultar todos los recursos conectados hacemos `> net use`. En la siguiente imagen se muestra el proceso que hemos seguido para ver la máquinas accesibles en la red y para conectarnos a nuestra máquina servidora:
+
+![imagen16](./images/16.png)
+
+Comprobamos el estado:
+
+![imagen17](./images/17.png)
 
 # Cliente GNU/Linux
 
 ## Cliente GNU/Linux GUI
+
+
 
 ## Cliente GNU/Linux comandos
 
