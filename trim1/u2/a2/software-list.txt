@@ -1,0 +1,5 @@
+tree:i
+geany:remove
+apache2:install
+php5:r
+nano:remove
