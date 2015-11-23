@@ -9,7 +9,7 @@ if user != "root\n"
 end
 
 file=`cat software-list.txt`
-filas=file.slit("\n")
+filas=file.split("\n")
 
 filas.each do |linea|
 	datos=linea.split(":")
@@ -23,6 +23,7 @@ filas.each do |linea|
 		else
 			system("apt-get -y purge #{datos[0]}")
 			puts "Se ha eliminado el paquete #{datos[0]} del sistema."
+		end
 	
 	elsif datos[1] == "install" || datos[1] == "i"
 		
@@ -31,6 +32,6 @@ filas.each do |linea|
 			puts "Se ha instalado el paquete #{datos[0]} en el sistema."
 		else
 			puts "El paquetes #{datos[0]} ya está instalado."
-	end
+		end
 	end
 end
