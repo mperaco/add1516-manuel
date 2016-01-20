@@ -64,7 +64,7 @@ En este apartado creamos una tarea programada periódica que muestra un mensaje 
 
 ### 2.4 Tarea asíncrona
 
-Y por último, realizamos la configuración de una tarea programada asíncrona, que iniciará el desfragmentador del disco cada cierto tiempo:
+Y por último, realizamos la configuración de una tarea programada asíncrona que iniciará el desfragmentador del disco cada cierto tiempo:
 
 ![](./images/17.png)
 
