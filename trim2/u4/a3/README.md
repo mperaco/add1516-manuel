@@ -65,7 +65,60 @@ Y reinicio el servicio: `/etc/init.d/puppet restart`
 
 ## 4. Aceptar certificado
 
+En este apartado, se realizará el intercambio de certificados entre cliente y servidor. En primer lugar vamos al servidor y consultamos las peticiones pendientes de unión al master:
+
+![](./images/18.png)
+
+Y a continuación, aceptamos el nuevo cliente desde el master:
+
+![](./images/19.png)
+
 ## 5. Segunda versión del fichero ".pp"
+
+Para realizar la prueba, vamos a utilizar un fichero que llamaremos `hostlinux2.pp` que tendrá el siguiente contenido:
+
+![](./images/20.png)
+
+Y modificamos el fichero `site.pp`:
+
+![](./images/21.png)
+
+Ahora ejecutamos el comando `puppet agent --test` en el cliente para traer las configuraciones:
+
+![](./images/22.png)
+
+Y comprobamos que efectivamente se crearon los usuarios:
+
+![](./images/23.png)
 
 ## 6. Cliente puppet Windows
 
+En primer lugar nos descargaremos puppet en el cliente Windows 7 y editaremos el fichero `hosts` tanto en el servidor como en el cliente como corresponda en cada caso.
+
+Ahora por último vamos a llevar la configuración de puppet a un cliente Windows 7. En el master crearemos un fichero `hostwindows1.pp` con el siguiente contenido:
+
+```
+class hostwindows1 {
+  user { 'darth-sidius':
+    ensure => 'present',
+    groups => ['Administradores']
+  }
+
+  user { 'darth-maul':
+    ensure => 'present',
+    groups => ['Usuarios']
+  }
+}
+```
+
+Y modificamos el fichero `site.pp`:
+
+![](./images/24.png)
+
+Finalmente, después del correspondiente intercambio de certificados, nos traemos las configuraciones al cliente:
+
+![](./images/27.png)
+
+Y efectivamente se han creado los usuarios en el sistema:
+
+![](./images/28.png)
