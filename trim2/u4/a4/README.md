@@ -95,23 +95,29 @@ Y vemos como nos aprovisiona con los paquetes que he reflejado en el fichero:
 
 Para crear nuestra propia caja, seguimos los siguientes pasos:
 
-1. Entramos en la máquina virtual que queremos comvertir a box de vagrant.
+* Entramos en la máquina virtual que queremos comvertir a box de vagrant.
 
-2. Ejecutamos los siguientes comandos:
+* Ejecutamos los siguientes comandos:
 
 > useradd -m vagrant
+
 > su - vagrant
+
 > mkdir .ssh
+
 > wget https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub -O .ssh/authorized_keys
+
 > chmod 700 .ssh 
+
 > chmod 600 .ssh/authorized_keys
 
-3. Concedemos permisos al usuario:
+* Concedemos permisos al usuario:
 
 > visudo
+
 > vagrant ALL=(ALL) NOPASSWD: ALL
 
-4. Y por último, apagamos la máquina virtual y accedemos a la consola de la máquina real. Ejecutamos los siguientes comandos:
+* Y por último, apagamos la máquina virtual y accedemos a la consola de la máquina real. Ejecutamos los siguientes comandos:
 
 ![](./images/12.png)
 
